@@ -51,6 +51,9 @@
     <input type="radio" name="pregunta8" value="Quiero más info">Quiero más info<br/>
     <input type="radio" name="pregunta8" value="No por ahora">No por ahora<br/><br/>
 
+    <label for="email"><b>Tu correo electrónico para recibir una copia:</b></label><br/>
+    <input type="email" id="email" name="email" required style="width: 300px;"><br/><br/>
+
     <button type="submit">Enviar diagnóstico</button>
   </form>
 
@@ -67,11 +70,12 @@
         pregunta5: formData.get("pregunta5"),
         pregunta6: formData.get("pregunta6"),
         pregunta7: formData.get("pregunta7"),
-        pregunta8: formData.get("pregunta8")
+        pregunta8: formData.get("pregunta8"),
+        email: formData.get("email") // <-- LÍNEA AÑADIDA
       };
 
       if (data.pregunta8 === "Sí, agendemos") {
-        window.open("https://calendly.com/fvega-outliers/-")
+        window.open("https://calendly.com/fvega-outliers/-");
       }
 
       try {
@@ -84,7 +88,7 @@
         });
 
         if (response.ok) {
-          alert("Gracias por enviar tu diagnóstico. Pronto te contactaremos.");
+          alert("Gracias por enviar tu diagnóstico. Hemos enviado una copia a tu correo.");
           document.getElementById("diagnosticoForm").reset();
         } else {
           alert("Hubo un error al enviar tus respuestas. Intenta de nuevo.");

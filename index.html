@@ -3,186 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Autodiagnóstico</title>
+  <title>Autodiagnóstico Estratégico</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
+      margin: 40px;
     }
-    #form-container {
-      max-width: 600px;
-      margin: 60px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      color: #333;
+    h1 {
+      color: #0d47a1;
     }
     .question {
       margin-bottom: 20px;
     }
     label {
+      display: block;
       font-weight: bold;
     }
-    select, textarea, button {
+    input[type="text"], select, textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 16px;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
     }
     button {
-      background: #007bff;
+      padding: 10px 20px;
+      background-color: #0d47a1;
       color: white;
       border: none;
       cursor: pointer;
     }
     button:hover {
-      background: #0056b3;
-    }
-    #resultado {
-      margin-top: 30px;
-      padding: 20px;
-      background: #e8f5e9;
-      border-left: 5px solid #4caf50;
-      display: none;
+      background-color: #1565c0;
     }
   </style>
 </head>
 <body>
-  <div id="form-container">
-    <h2>Autodiagnóstico Estratégico</h2>
-    <div id="formulario">
-      <div class="question">
-        <label for="p1">1. ¿Cómo describirías el momento actual de tu empresa?</label>
-        <select id="p1">
-          <option value="">Selecciona una opción</option>
-          <option value="crecimiento">Estamos creciendo con fuerza</option>
-          <option value="estancamiento">Nos sentimos estancados</option>
-          <option value="crisis">Estamos enfrentando una crisis</option>
-        </select>
-      </div>
 
-      <div class="question">
-        <label for="p2">2. ¿Tienes claridad sobre qué hace única a tu empresa frente a la competencia?</label>
-        <select id="p2">
-          <option value="">Selecciona una opción</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-          <option value="parcial">Más o menos</option>
-        </select>
-      </div>
+  <h1>Autodiagnóstico Estratégico</h1>
 
-      <div class="question">
-        <label for="p3">3. ¿Sientes que tu equipo está alineado con la dirección estratégica del negocio?</label>
-        <select id="p3">
-          <option value="">Selecciona una opción</option>
-          <option value="totalmente">Totalmente</option>
-          <option value="parcialmente">Parcialmente</option>
-          <option value="nada">Nada</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <label for="p4">4. ¿La forma en que trabajan refleja el ADN que quieren tener?</label>
-        <select id="p4">
-          <option value="">Selecciona una opción</option>
-          <option value="siempre">Siempre</option>
-          <option value="a_veces">A veces</option>
-          <option value="nunca">Nunca</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <label for="p5">5. ¿Tu modelo de negocio está respondiendo a los cambios del entorno?</label>
-        <select id="p5">
-          <option value="">Selecciona una opción</option>
-          <option value="adaptandose">Sí, se adapta rápidamente</option>
-          <option value="le_cuesta">Le cuesta adaptarse</option>
-          <option value="desactualizado">Está desactualizado</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <label for="p6">6. ¿Cómo tomas hoy las decisiones estratégicas más importantes?</label>
-        <select id="p6">
-          <option value="">Selecciona una opción</option>
-          <option value="intuitivo">De forma intuitiva</option>
-          <option value="basado_datos">Con base en datos</option>
-          <option value="consenso">Por consenso del equipo</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <label for="p7">7. ¿Qué tanto estás cuestionando los paradigmas con los que operas hoy?</label>
-        <select id="p7">
-          <option value="">Selecciona una opción</option>
-          <option value="frecuente">Lo hacemos frecuentemente</option>
-          <option value="ocasional">Ocasionalmente</option>
-          <option value="nunca">Nunca</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <label for="p8">8. ¿Quieres agendar una sesión estratégica gratuita para revisar tus respuestas?</label>
-        <select id="p8">
-          <option value="">Selecciona una opción</option>
-          <option value="si">Sí</option>
-          <option value="no">No por ahora</option>
-        </select>
-      </div>
-
-      <button onclick="enviarFormulario()">Enviar respuestas</button>
+  <form id="diagnosticoForm">
+    <div class="question">
+      <label for="pregunta1">1. ¿Cuál es el mayor reto estratégico que enfrenta hoy tu negocio?</label>
+      <input type="text" id="pregunta1" name="pregunta1" required />
     </div>
-    <div id="resultado"></div>
-  </div>
+    <div class="question">
+      <label for="pregunta2">2. ¿Qué te quita el sueño como líder o dueño del negocio?</label>
+      <input type="text" id="pregunta2" name="pregunta2" required />
+    </div>
+    <div class="question">
+      <label for="pregunta3">3. ¿Qué has intentado para solucionarlo?</label>
+      <input type="text" id="pregunta3" name="pregunta3" required />
+    </div>
+    <div class="question">
+      <label for="pregunta4">4. ¿Qué de eso ha funcionado y qué no?</label>
+      <input type="text" id="pregunta4" name="pregunta4" required />
+    </div>
+    <div class="question">
+      <label for="pregunta5">5. ¿Sientes que estás creciendo o estancado?</label>
+      <select id="pregunta5" name="pregunta5" required>
+        <option value="">Selecciona una opción</option>
+        <option value="Creciendo">Creciendo</option>
+        <option value="Estancado">Estancado</option>
+        <option value="Retrocediendo">Retrocediendo</option>
+      </select>
+    </div>
+    <div class="question">
+      <label for="pregunta6">6. ¿Dónde sientes que se tranca tu negocio? (puedes marcar varios)</label>
+      <textarea id="pregunta6" name="pregunta6" rows="3" placeholder="Ej: equipo, estrategia, mercado, ventas..."></textarea>
+    </div>
+    <div class="question">
+      <label for="pregunta7">7. ¿Qué tanto tiempo tienes para dedicarle a transformar el negocio?</label>
+      <select id="pregunta7" name="pregunta7" required>
+        <option value="">Selecciona una opción</option>
+        <option value="Mucho tiempo">Mucho tiempo</option>
+        <option value="Poco tiempo">Poco tiempo</option>
+        <option value="Nada de tiempo">Nada de tiempo</option>
+      </select>
+    </div>
+    <div class="question">
+      <label for="pregunta8">8. ¿Te gustaría tener una conversación estratégica sin costo con un consultor senior?</label>
+      <select id="pregunta8" name="pregunta8" required>
+        <option value="">Selecciona una opción</option>
+        <option value="Sí, agendemos">Sí, agendemos</option>
+        <option value="No por ahora">No por ahora</option>
+      </select>
+    </div>
+
+    <button type="submit">Enviar respuestas</button>
+  </form>
 
   <script>
-    const webhookUrl = "https://outliersestrategia.app.n8n.cloud/webhook/autodiagnostico"; // <-- Reemplaza esto con tu URL real de webhook de n8n
-    const linkCalendly = "https://calendly.com/fvega-outliers/-"; // <-- Reemplaza esto por tu link de Calendly
+    document.getElementById("diagnosticoForm").addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-    async function enviarFormulario() {
-      const respuestas = {
-        p1: document.getElementById('p1').value,
-        p2: document.getElementById('p2').value,
-        p3: document.getElementById('p3').value,
-        p4: document.getElementById('p4').value,
-        p5: document.getElementById('p5').value,
-        p6: document.getElementById('p6').value,
-        p7: document.getElementById('p7').value,
-        p8: document.getElementById('p8').value,
+      const data = {
+        pregunta1: document.getElementById("pregunta1").value,
+        pregunta2: document.getElementById("pregunta2").value,
+        pregunta3: document.getElementById("pregunta3").value,
+        pregunta4: document.getElementById("pregunta4").value,
+        pregunta5: document.getElementById("pregunta5").value,
+        pregunta6: document.getElementById("pregunta6").value,
+        pregunta7: document.getElementById("pregunta7").value,
+        pregunta8: document.getElementById("pregunta8").value,
       };
 
       try {
-        const response = await fetch(webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(respuestas),
+        const response = await fetch("https://outliersestrategia.app.n8n.cloud/webhook/autodiagnostico", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
         });
 
-        const data = await response.json();
-        const resultado = document.getElementById('resultado');
-        resultado.style.display = 'block';
-        resultado.innerHTML = `
-          <p><strong>Resultado:</strong> ${data.result}</p>
-          ${
-            respuestas.p8 === 'si'
-              ? `<p><a href="${linkCalendly}" target="_blank">Agenda tu sesión estratégica aquí</a></p>`
-              : ''
-          }
-        `;
-        document.getElementById('formulario').style.display = 'none';
+        const result = await response.json();
+
+        alert(result.result || "Gracias por enviar tus respuestas.");
+
+        if (data.pregunta8 === "Sí, agendemos") {
+          window.location.href = "https://calendly.com/fvega-outliers/-";
+        }
       } catch (error) {
-        alert('Hubo un error al enviar tus respuestas. Intenta nuevamente.');
-        console.error(error);
+        console.error("Error al enviar:", error);
+        alert("Hubo un error al enviar tus respuestas.");
       }
-    }
+    });
   </script>
 </body>
 </html>

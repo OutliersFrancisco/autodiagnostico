@@ -3,101 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Autodiagnóstico Estratégico</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      color: #333;
-    }
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 1rem;
-    }
-    textarea, select, input[type="text"] {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    button {
-      padding: 0.7rem 1.5rem;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+  <title>Autodiagnóstico</title>
 </head>
 <body>
-  <h1>¿Dónde está tu empresa hoy... y qué estás dejando de ver?</h1>
+  <h1>Autodiagnóstico estratégico</h1>
   <form id="diagnosticoForm">
-    <label>1. ¿Cuál de estas frases describe mejor tu situación actual?</label>
-    <select name="pregunta1" required>
-      <option value="">Selecciona una opción</option>
-      <option>Estamos creciendo, pero sin mucho foco.</option>
-      <option>Estamos bien, pero con dudas sobre el futuro.</option>
-      <option>Estamos estancados.</option>
-      <option>Estamos perdiendo plata o clientes.</option>
-    </select>
+    <p>1. ¿Cuál de estas frases describe mejor tu situación actual?</p>
+    <input type="radio" name="q1" value="Estamos creciendo, pero sin mucho foco." required> Estamos creciendo, pero sin mucho foco.<br>
+    <input type="radio" name="q1" value="Estamos bien, pero con dudas sobre el futuro."> Estamos bien, pero con dudas sobre el futuro.<br>
+    <input type="radio" name="q1" value="Estamos estancados."> Estamos estancados.<br>
+    <input type="radio" name="q1" value="Estamos perdiendo plata o clientes."> Estamos perdiendo plata o clientes.<br>
 
-    <label>2. ¿Qué tan claro tienes dónde está hoy el verdadero valor de tu negocio?</label>
-    <select name="pregunta2" required>
-      <option value="">Selecciona una opción</option>
-      <option>Clarísimo.</option>
-      <option>Más o menos, tenemos ideas pero no métricas.</option>
-      <option>Hay cosas que aportan, otras que solo consumen energía.</option>
-      <option>No lo tenemos claro aún.</option>
-    </select>
+    <p>2. ¿Qué tan claro tienes dónde está hoy el verdadero valor de tu negocio?</p>
+    <input type="radio" name="q2" value="Clarísimo." required> Clarísimo.<br>
+    <input type="radio" name="q2" value="Más o menos, tenemos ideas pero no métricas."> Más o menos, tenemos ideas pero no métricas.<br>
+    <input type="radio" name="q2" value="Hay cosas que aportan, otras que solo consumen energía."> Hay cosas que aportan, otras que solo consumen energía.<br>
+    <input type="radio" name="q2" value="No lo tenemos claro aún."> No lo tenemos claro aún.<br>
 
-    <label>3. ¿Cómo se toman las decisiones clave en tu organización?</label>
-    <select name="pregunta3" required>
-      <option value="">Selecciona una opción</option>
-      <option>Con foco estratégico y desde el cliente.</option>
-      <option>En reuniones largas, con intuición o historia.</option>
-      <option>Reaccionamos más de lo que decidimos.</option>
-    </select>
+    <p>3. ¿Cómo se toman las decisiones clave en tu organización?</p>
+    <input type="radio" name="q3" value="Con foco estratégico y desde el cliente." required> Con foco estratégico y desde el cliente.<br>
+    <input type="radio" name="q3" value="En reuniones largas, con intuición o historia."> En reuniones largas, con intuición o historia.<br>
+    <input type="radio" name="q3" value="Reaccionamos más de lo que decidimos."> Reaccionamos más de lo que decidimos.<br>
 
-    <label>4. ¿Qué frases reflejan tu realidad actual? (selección múltiple)</label>
-    <input type="checkbox" name="pregunta4" value="Tomamos decisiones todos los días, pero pocas son estratégicas"> Tomamos decisiones todos los días, pero pocas son estratégicas<br>
-    <input type="checkbox" name="pregunta4" value="Vendemos, pero ganamos poco"> Vendemos, pero ganamos poco<br>
-    <input type="checkbox" name="pregunta4" value="Nos come lo urgente"> Nos come lo urgente<br>
-    <input type="checkbox" name="pregunta4" value="Tenemos buena gente, pero sin dirección común"> Tenemos buena gente, pero sin dirección común<br>
-    <input type="checkbox" name="pregunta4" value="Nos cuesta soltar lo que ya no funciona"> Nos cuesta soltar lo que ya no funciona<br>
+    <p>4. ¿Qué frases reflejan tu realidad actual?</p>
+    <input type="checkbox" name="q4" value="Tomamos decisiones todos los días, pero pocas son estratégicas"> Tomamos decisiones todos los días, pero pocas son estratégicas<br>
+    <input type="checkbox" name="q4" value="Vendemos, pero ganamos poco"> Vendemos, pero ganamos poco<br>
+    <input type="checkbox" name="q4" value="Nos come lo urgente"> Nos come lo urgente<br>
+    <input type="checkbox" name="q4" value="Tenemos buena gente, pero sin dirección común"> Tenemos buena gente, pero sin dirección común<br>
+    <input type="checkbox" name="q4" value="Nos cuesta soltar lo que ya no funciona"> Nos cuesta soltar lo que ya no funciona<br>
 
-    <label>5. ¿Qué parte del negocio sabes que deberías soltar, pero aún no lo haces?</label>
-    <textarea name="pregunta5" rows="3" required></textarea>
+    <p>5. ¿Qué parte del negocio sabes que deberías soltar, pero aún no lo haces?</p>
+    <input type="text" name="q5" required><br>
 
-    <label>6. ¿Qué comportamiento se repite en tu equipo que sabes que no ayuda… pero igual toleras?</label>
-    <textarea name="pregunta6" rows="3" required></textarea>
+    <p>6. ¿Qué comportamiento se repite en tu equipo que sabes que no ayuda… pero igual toleras?</p>
+    <input type="text" name="q6" required><br>
 
-    <label>7. ¿Qué te gustaría lograr con una conversación estratégica con Outliers?</label>
-    <select name="pregunta7" required>
-      <option value="">Selecciona una opción</option>
-      <option>Claridad sobre dónde estoy y qué decisiones tomar</option>
-      <option>Validar decisiones que ya estoy considerando</option>
-      <option>Organizarme para crecer con intención</option>
-      <option>Descubrir lo que no estoy viendo</option>
-    </select>
+    <p>7. ¿Qué te gustaría lograr con una conversación estratégica con Outliers?</p>
+    <input type="radio" name="q7" value="Claridad sobre dónde estoy y qué decisiones tomar" required> Claridad sobre dónde estoy y qué decisiones tomar<br>
+    <input type="radio" name="q7" value="Validar decisiones que ya estoy considerando"> Validar decisiones que ya estoy considerando<br>
+    <input type="radio" name="q7" value="Organizarme para crecer con intención"> Organizarme para crecer con intención<br>
+    <input type="radio" name="q7" value="Descubrir lo que no estoy viendo"> Descubrir lo que no estoy viendo<br>
 
-    <label>8. ¿Quieres tener esa conversación (freemium)?</label>
-    <select name="pregunta8" id="pregunta8" required>
-      <option value="">Selecciona una opción</option>
-      <option>Sí, agendemos</option>
-      <option>Quiero más info</option>
-      <option>No por ahora</option>
-    </select>
+    <p>8. ¿Quieres tener esa conversación (freemium)?</p>
+    <input type="radio" name="q8" value="Sí, agendemos" required> Sí, agendemos<br>
+    <input type="radio" name="q8" value="Quiero más info"> Quiero más info<br>
+    <input type="radio" name="q8" value="No por ahora"> No por ahora<br>
 
-    <button type="submit">Enviar respuestas</button>
+    <br><button type="submit">Enviar respuestas</button>
   </form>
 
-  <div id="resultado" style="margin-top: 2rem; font-weight: bold;"></div>
+  <div id="respuesta"></div>
 
   <script>
     document.getElementById('diagnosticoForm').addEventListener('submit', async function(e) {
@@ -105,32 +60,29 @@
 
       const form = e.target;
       const formData = new FormData(form);
+      const data = {};
 
-      const data = {
-        pregunta1: formData.get('pregunta1'),
-        pregunta2: formData.get('pregunta2'),
-        pregunta3: formData.get('pregunta3'),
-        pregunta4: formData.getAll('pregunta4'),
-        pregunta5: formData.get('pregunta5'),
-        pregunta6: formData.get('pregunta6'),
-        pregunta7: formData.get('pregunta7'),
-        pregunta8: formData.get('pregunta8')
-      };
+      formData.forEach((value, key) => {
+        if (data[key]) {
+          if (!Array.isArray(data[key])) data[key] = [data[key]];
+          data[key].push(value);
+        } else {
+          data[key] = value;
+        }
+      });
 
-      const response = await fetch("https://outliersestrategia.app.n8n.cloud/webhook-test/autodiagnostico", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+      const response = await fetch('https://n8n.outliers.com.co/webhook/autodiagnostico', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
 
       const result = await response.json();
+      document.getElementById('respuesta').innerText = result.result;
 
-      if (data.pregunta8 === "Sí, agendemos") {
-        window.location.href = "https://calendly.com/outliers-consulting/30min"; // o el link que tengas
-      } else {
-        document.getElementById('resultado').textContent = result[0]?.result || "Gracias por completar el diagnóstico.";
+      // Redirigir a Calendly si seleccionó "Sí, agendemos"
+      if (data.q8 === "Sí, agendemos") {
+        window.open("https://calendly.com/fvega-outliers/-", "_blank");
       }
     });
   </script>
